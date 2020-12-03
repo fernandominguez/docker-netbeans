@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# pass your homedir absolute path as an argument
+my_homedir="$1"
+
+echo "my_homedir:$my_homedir"
+
+docker run -ti --rm \
+	-e DISPLAY=$DISPLAY \
+	-v /tmp/.X11-unix:/tmp/.X11-unix \
+	-v $my_homedir:/workspace \
+	-v $my_homedir/.netbeans-docker:/home/developer \
+	fernandominguez/netbeans_docker:netbeans_base_bionic
