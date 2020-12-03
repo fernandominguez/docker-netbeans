@@ -1,0 +1,8 @@
+#!/bin/bash
+
+my_netbeansdir='.netbeans-docker'
+echo 'creating directory:'"$my_netbeansdir"
+mkdir -p "$my_netbeansdir"
+
+echo 'This will take a lot of time...'
+docker build --no-cache -t fernandominguez/netbeans_docker:netbeans_base_bionic .
